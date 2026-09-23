@@ -1,0 +1,41 @@
+<view class="page">
+  <view class="page-header">
+    <view>
+      <view class="eyebrow">首次连接</view>
+      <view class="title">配对 Android 采集端</view>
+      <view class="subtitle">配对完成后，短信和通知中识别出的包裹会同步到这里。</view>
+    </view>
+  </view>
+
+  <view wx:if="{{error}}" class="error-banner">{{error}}</view>
+
+  <view wx:if="{{!code}}" class="surface intro-card">
+    <view class="step-row">
+      <view class="step-index">1</view>
+      <view>
+        <view class="step-title">在 Android 采集端填写服务地址</view>
+        <view class="step-copy">开发者工具本地预览使用当前电脑的局域网地址。</view>
+      </view>
+    </view>
+    <view class="step-row">
+      <view class="step-index">2</view>
+      <view>
+        <view class="step-title">生成并输入 6 位配对码</view>
+        <view class="step-copy">配对码十分钟内有效，只用于建立这台手机和当前会话的连接。</view>
+      </view>
+    </view>
+    <button class="primary-button" loading="{{loading}}" bindtap="createPairing">生成配对码</button>
+    <button class="ghost-button" bindtap="openSettings">检查服务地址</button>
+  </view>
+
+  <view wx:else class="surface pairing-card">
+    <view class="pair-label">请让 Android 采集端输入</view>
+    <view class="pair-code code" bindtap="copyCode">{{code}}</view>
+    <view class="pair-hint">正在等待采集端确认，页面会自动刷新</view>
+    <view class="waiting-row">
+      <view class="waiting-dot"></view>
+      <text>等待中</text>
+    </view>
+  </view>
+</view>
+

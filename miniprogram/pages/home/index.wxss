@@ -1,0 +1,169 @@
+.filter-bar {
+  display: flex;
+  background: #e4e9e6;
+  border-radius: 12rpx;
+  padding: 6rpx;
+  margin-bottom: 26rpx;
+}
+
+.filter-item {
+  flex: 1;
+  color: #5d6b63;
+  font-size: 27rpx;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 8rpx;
+}
+
+.filter-item.active {
+  background: #ffffff;
+  color: #102019;
+  font-weight: 650;
+  box-shadow: 0 2rpx 8rpx rgba(24, 44, 34, .08);
+}
+
+.loading-state,
+.empty-state {
+  color: #6f7d75;
+  text-align: center;
+}
+
+.loading-state {
+  padding: 100rpx 0;
+}
+
+.empty-state {
+  padding: 70rpx 38rpx;
+}
+
+.empty-title {
+  color: #17211b;
+  font-size: 34rpx;
+  font-weight: 650;
+}
+
+.empty-copy {
+  line-height: 1.6;
+  margin: 14rpx 0 34rpx;
+}
+
+.station-group {
+  margin-bottom: 34rpx;
+}
+
+.station-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rpx 14rpx;
+}
+
+.station-name {
+  color: #26352d;
+  font-size: 30rpx;
+  font-weight: 650;
+}
+
+.station-count {
+  color: #6b786f;
+  font-size: 24rpx;
+}
+
+.parcel-list {
+  overflow: hidden;
+}
+
+.parcel-row {
+  display: flex;
+  align-items: stretch;
+  padding: 26rpx 0 24rpx 26rpx;
+  border-bottom: 1rpx solid #e7ebe8;
+}
+
+.parcel-row:last-child {
+  border-bottom: 0;
+}
+
+.parcel-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.parcel-topline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+
+.courier {
+  color: #506159;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.status {
+  border-radius: 999rpx;
+  font-size: 21rpx;
+  line-height: 38rpx;
+  margin-left: 14rpx;
+  padding: 0 16rpx;
+}
+
+.status-pending {
+  background: #fff1dc;
+  color: #95520e;
+}
+
+.status-picked,
+.status-archived {
+  background: #e7eee9;
+  color: #5f6e65;
+}
+
+.pickup-code {
+  display: inline-block;
+  color: #102019;
+  font-size: 46rpx;
+  font-weight: 750;
+  line-height: 1.2;
+  margin-bottom: 12rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 8rpx;
+}
+
+.pickup-code:active {
+  background: #edf3ef;
+}
+
+.pickup-code-empty {
+  color: #8b6232;
+  font-size: 34rpx;
+}
+
+.parcel-meta {
+  color: #56675e;
+  font-size: 23rpx;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.parcel-time {
+  color: #89938d;
+  font-size: 22rpx;
+  margin-top: 9rpx;
+}
+
+.picked-button {
+  align-self: center;
+  flex: 0 0 112rpx;
+  min-height: 66rpx;
+  line-height: 66rpx;
+  margin: 0 22rpx 0 18rpx;
+  padding: 0;
+  background: #e7f1eb;
+  color: #176b4a;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  font-weight: 600;
+}
+

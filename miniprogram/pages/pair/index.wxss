@@ -1,0 +1,84 @@
+.intro-card {
+  padding: 30rpx;
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32rpx;
+}
+
+.step-index {
+  flex: 0 0 52rpx;
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  background: #e7f1eb;
+  color: #176b4a;
+  font-weight: 700;
+  line-height: 52rpx;
+  text-align: center;
+  margin-right: 20rpx;
+}
+
+.step-title {
+  color: #17211b;
+  font-size: 29rpx;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.step-copy {
+  color: #6d7972;
+  font-size: 24rpx;
+  line-height: 1.5;
+  margin-top: 6rpx;
+}
+
+.pairing-card {
+  padding: 54rpx 34rpx 42rpx;
+  text-align: center;
+}
+
+.pair-label {
+  color: #65736a;
+  font-size: 25rpx;
+}
+
+.pair-code {
+  color: #102019;
+  font-size: 76rpx;
+  font-weight: 750;
+  line-height: 1.25;
+  margin: 24rpx 0 18rpx;
+}
+
+.pair-hint {
+  color: #718078;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.waiting-row {
+  display: inline-flex;
+  align-items: center;
+  color: #176b4a;
+  font-size: 25rpx;
+  font-weight: 600;
+  margin-top: 34rpx;
+}
+
+.waiting-dot {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #2d8c64;
+  margin-right: 12rpx;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: .35; transform: scale(.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+

@@ -1,0 +1,91 @@
+.loading-state {
+  color: #6f7d75;
+  text-align: center;
+  padding: 100rpx 0;
+}
+
+.detail-hero {
+  padding: 46rpx 20rpx 40rpx;
+  text-align: center;
+}
+
+.hero-label {
+  color: #65736a;
+  font-size: 25rpx;
+}
+
+.hero-code {
+  color: #102019;
+  font-size: 76rpx;
+  font-weight: 760;
+  line-height: 1.25;
+  margin: 12rpx 0 10rpx;
+}
+
+.hero-code-empty {
+  color: #8b6232;
+  font-size: 52rpx;
+}
+
+.hero-station {
+  color: #44564c;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.info-card {
+  margin-bottom: 24rpx;
+  padding: 4rpx 26rpx;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24rpx;
+  border-bottom: 1rpx solid #e7ebe8;
+  padding: 24rpx 0;
+  font-size: 26rpx;
+  line-height: 1.45;
+}
+
+.info-row:last-child {
+  border-bottom: 0;
+}
+
+.info-label {
+  flex: 0 0 150rpx;
+  color: #718078;
+}
+
+.info-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+  margin-bottom: 24rpx;
+}
+
+.raw-card {
+  padding: 26rpx;
+}
+
+.raw-title {
+  color: #26352d;
+  font-size: 27rpx;
+  font-weight: 650;
+  margin-bottom: 14rpx;
+}
+
+.raw-text {
+  color: #5d6b63;
+  font-size: 24rpx;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+

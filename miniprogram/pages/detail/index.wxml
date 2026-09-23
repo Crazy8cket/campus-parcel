@@ -1,0 +1,53 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="loading-state">正在读取...</view>
+  <view wx:elif="{{error}}" class="error-banner">{{error}}</view>
+
+  <view wx:elif="{{parcel}}">
+    <view class="detail-hero">
+      <view class="hero-label">{{parcel.pickupCode ? '取件码' : '取件码尚未生成'}}</view>
+      <view
+        class="hero-code code {{parcel.pickupCode ? '' : 'hero-code-empty'}}"
+        bindtap="copyCode"
+      >{{parcel.pickupCode || '待出码'}}</view>
+      <view class="hero-station">{{parcel.station || '驿站待识别'}}</view>
+    </view>
+
+    <view class="surface info-card">
+      <view class="info-row">
+        <text class="info-label">快递公司</text>
+        <text>{{parcel.courier}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">订单号</text>
+        <text class="info-value code">{{parcel.orderNumber || '未识别'}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">运单号</text>
+        <text class="info-value code">{{parcel.trackingNumber || '未识别'}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">消息来源</text>
+        <text>{{parcel.source === 'notification' ? '应用通知' : parcel.source === 'sms' ? '短信' : '手动导入'}}</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">收到时间</text>
+        <text>{{parcel.occurredAt}}</text>
+      </view>
+    </view>
+
+    <view class="action-grid">
+      <button class="secondary-button" bindtap="copySummary">复制包裹信息</button>
+      <button
+        class="primary-button"
+        disabled="{{parcel.status === 'picked'}}"
+        bindtap="markPicked"
+      >{{parcel.status === 'picked' ? '已完成取件' : '标记已取'}}</button>
+    </view>
+
+    <view class="surface raw-card">
+      <view class="raw-title">原始识别文本</view>
+      <view class="raw-text">{{parcel.rawText}}</view>
+    </view>
+  </view>
+</view>
+

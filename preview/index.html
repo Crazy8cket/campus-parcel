@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>校园取件</title>
+  <link rel="stylesheet" href="/preview/style.css">
+</head>
+<body>
+  <main class="phone-shell">
+    <header class="app-header">
+      <div>
+        <p id="deviceLabel" class="eyebrow">尚未连接采集端</p>
+        <h1>待取包裹</h1>
+        <p id="summary" class="subtitle">连接 Android 采集端后查看同步结果。</p>
+      </div>
+      <button id="settingsButton" class="text-button" type="button">设置</button>
+    </header>
+
+    <section id="pairPanel" class="pair-panel">
+      <h2>连接采集端</h2>
+      <p>在 Android 采集端填写服务地址和下面的配对码。</p>
+      <button id="createPairingButton" class="primary-button" type="button">生成配对码</button>
+      <div id="pairingCode" class="pairing-code" hidden></div>
+      <p id="pairingHint" class="muted" hidden>正在等待采集端确认。</p>
+    </section>
+
+    <section id="parcelPanel" hidden>
+      <nav class="filter-bar" aria-label="包裹状态">
+        <button class="filter active" data-status="pending" type="button">待取</button>
+        <button class="filter" data-status="picked" type="button">已取</button>
+        <button class="filter" data-status="all" type="button">全部</button>
+      </nav>
+      <div id="alert" class="alert" hidden></div>
+      <div id="loading" class="empty-state">正在同步包裹...</div>
+      <div id="groups" class="groups"></div>
+    </section>
+
+    <section id="settingsPanel" class="settings-panel" hidden>
+      <h2>连接设置</h2>
+      <label for="serverUrl">同步服务地址</label>
+      <input id="serverUrl" type="url" value="http://127.0.0.1:8787">
+      <button id="saveSettingsButton" class="primary-button" type="button">保存地址</button>
+      <button id="resetButton" class="danger-button" type="button">解除当前连接</button>
+    </section>
+  </main>
+  <script src="/preview/app.js"></script>
+</body>
+</html>
+

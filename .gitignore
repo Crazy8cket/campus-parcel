@@ -1,0 +1,8 @@
+node_modules/
+work/
+server/data/*.json
+server/data/*.tmp
+android/.gradle/
+android/local.properties
+android/**/build/
+.DS_Store

@@ -1,0 +1,10 @@
+{
+  "desc": "校园取件聚合小程序",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "*"
+    }
+  ]
+}
+

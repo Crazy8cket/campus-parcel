@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="page-header">
+    <view>
+      <view class="eyebrow">{{deviceName || '尚未连接采集端'}}</view>
+      <view class="title">待取包裹</view>
+      <view class="subtitle" wx:if="{{pendingCount}}">共有 {{pendingCount}} 件待取，按驿站分组展示。</view>
+      <view class="subtitle" wx:else>当前没有待取包裹。</view>
+    </view>
+    <button class="text-button" bindtap="openSettings">设置</button>
+  </view>
+
+  <view class="filter-bar">
+    <view class="filter-item {{status === 'pending' ? 'active' : ''}}" data-status="pending" bindtap="changeStatus">待取</view>
+    <view class="filter-item {{status === 'picked' ? 'active' : ''}}" data-status="picked" bindtap="changeStatus">已取</view>
+    <view class="filter-item {{status === 'all' ? 'active' : ''}}" data-status="all" bindtap="changeStatus">全部</view>
+  </view>
+
+  <view wx:if="{{error}}" class="error-banner">
+    {{error}}
+    <view class="text-button" bindtap="openPairing">重新配对</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-state">正在同步包裹...</view>
+
+  <view wx:elif="{{!groups.length}}" class="surface empty-state">
+    <view class="empty-title">这里还没有包裹</view>
+    <view class="empty-copy">确认 Android 采集端已连接，并且短信或通知已经产生识别记录。</view>
+    <button class="secondary-button" bindtap="openPairing">查看配对码</button>
+  </view>
+
+  <view wx:else class="station-list">
+    <view wx:for="{{groups}}" wx:key="station" class="station-group">
+      <view class="station-heading">
+        <view class="station-name">{{item.station}}</view>
+        <view class="station-count">{{item.count}} 件</view>
+      </view>
+      <view class="surface parcel-list">
+        <view
+          wx:for="{{item.items}}"
+          wx:for-item="parcel"
+          wx:key="id"
+          class="parcel-row"
+          data-id="{{parcel.id}}"
+          bindtap="openDetail"
+        >
+          <view class="parcel-main">
+            <view class="parcel-topline">
+              <text class="courier">{{parcel.courier}}</text>
+              <text class="status status-{{parcel.status}}">{{parcel.statusLabel}}</text>
+            </view>
+            <view
+              class="pickup-code code {{parcel.hasCode ? '' : 'pickup-code-empty'}}"
+              data-code="{{parcel.pickupCode}}"
+              catchtap="copyCode"
+            >
+              {{parcel.hasCode ? parcel.pickupCode : '待出码'}}
+            </view>
+            <view class="parcel-meta">
+              {{parcel.orderNumber ? '订单 ' + parcel.orderNumber : ''}}
+              {{parcel.orderNumber && parcel.trackingNumber ? ' · ' : ''}}
+              {{parcel.trackingNumber ? '运单 ' + parcel.trackingNumber : ''}}
+            </view>
+            <view class="parcel-time">{{parcel.displayTime}}</view>
+          </view>
+          <button
+            wx:if="{{parcel.status === 'pending'}}"
+            class="picked-button"
+            data-id="{{parcel.id}}"
+            catchtap="markPicked"
+          >已取</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

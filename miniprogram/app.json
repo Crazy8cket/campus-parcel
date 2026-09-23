@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/pair/index",
+    "pages/detail/index",
+    "pages/settings/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "校园取件",
+    "navigationBarBackgroundColor": "#f2f4f7",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f2f4f7",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
+

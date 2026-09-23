@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">校园取件采集端</string>
+    <string name="notification_service_name">校园取件通知识别</string>
+</resources>
+

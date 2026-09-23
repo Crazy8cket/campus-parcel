@@ -1,0 +1,284 @@
+:root {
+  color-scheme: light;
+  --page: #f2f4f7;
+  --surface: #ffffff;
+  --text: #17211b;
+  --muted: #65736a;
+  --line: #dde3df;
+  --accent: #176b4a;
+  --accent-soft: #e7f1eb;
+  --warning-soft: #fff1dc;
+  --warning: #95520e;
+  --danger-soft: #fcecec;
+  --danger: #a43232;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #dfe5e1;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.phone-shell {
+  width: min(100%, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+  background: var(--page);
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.text-button {
+  padding: 8px 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.pair-panel,
+.settings-panel {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.pair-panel p,
+.settings-panel p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.primary-button,
+.danger-button {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 7px;
+  font-weight: 650;
+}
+
+.primary-button {
+  margin-top: 14px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.danger-button {
+  margin-top: 12px;
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.pairing-code {
+  margin-top: 22px;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 52px;
+  font-weight: 750;
+  text-align: center;
+}
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 22px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #e4e9e6;
+}
+
+.filter {
+  min-height: 38px;
+  border-radius: 6px;
+  background: transparent;
+  color: #5d6b63;
+}
+
+.filter.active {
+  background: #fff;
+  color: var(--text);
+  font-weight: 650;
+  box-shadow: 0 1px 4px rgba(24, 44, 34, .08);
+}
+
+.alert {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #efc8c0;
+  border-radius: 7px;
+  background: #fff1ee;
+  color: #8d3527;
+  line-height: 1.5;
+}
+
+.empty-state {
+  padding: 54px 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.group {
+  margin-bottom: 26px;
+}
+
+.group-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px 10px;
+}
+
+.group-heading strong {
+  font-size: 17px;
+}
+
+.group-heading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.parcel-list {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.parcel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 18px 16px;
+  border-bottom: 1px solid #e7ebe8;
+}
+
+.parcel:last-child {
+  border-bottom: 0;
+}
+
+.parcel-topline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #506159;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.status {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--warning-soft);
+  color: var(--warning);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.status-picked {
+  background: var(--accent-soft);
+  color: #5f6e65;
+}
+
+.pickup-code {
+  margin: 8px 0 6px;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.pickup-code.empty {
+  color: var(--warning);
+  font-size: 22px;
+}
+
+.meta,
+.time {
+  color: #56675e;
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.time {
+  margin-top: 5px;
+  color: #89938d;
+}
+
+.picked-button {
+  align-self: center;
+  min-width: 58px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.settings-panel {
+  margin-top: 18px;
+}
+
+.settings-panel label {
+  display: block;
+  margin: 18px 0 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.settings-panel input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #f4f6f5;
+  color: var(--text);
+}
+
